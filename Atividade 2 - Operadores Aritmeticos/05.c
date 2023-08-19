@@ -6,7 +6,7 @@ int main(void){
     printf("Digite um valor em reais para a conversao...\n");
     scanf("%f", &x);
 
-    valor = x * dolar;
+    valor = x / dolar;
     printf("O valor em dolares e igual a: US$%.2f", valor);
 
     return 0;

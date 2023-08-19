@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void){
-    double raio, area, pi = 3.14;
+    double raio, area, pi = 3.1415;
 
     printf("Qual o valor do raio do circulo?\n");
     scanf("%lf", &raio);

@@ -58,7 +58,7 @@ int main(void){
             return 1;
         }
 
-        if(strcmp(sexo, fem)==0 && idade >= 18 && idade <= 35 && strcmp(olhos, cas)==0 && strcmp(cabelo, cas)==0){
+        if(strcmp(sexo, fem)==0 && (idade >= 18 && idade <= 35) && strcmp(olhos, cas)==0 && strcmp(cabelo, cas)==0){
             individuoEspecifico++;
         }
 

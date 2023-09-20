@@ -3,12 +3,12 @@
 
 int main(void){
     char sexo[2], olhos[2], cabelo[2], masc[2] = "m", fem[2] = "f", az[2] = "a", ve[2] = "v", cas[2] = "c", pre[2] = "p", loi[2] = "l", rui[2] = "r";
-    int idade = 0;
-    float salario;
+    int idade = 0, individuoEspecifico = 0, individuosTotal = 0;
+    float salario, porcentagem;
 
-    printf("Pesquisa para cadastro:\n(para indicar o fim da pesquisa, indique a idade como -1)\n");
 
     do{
+        printf("\nPesquisa para cadastro:\n(para indicar o fim da pesquisa, indique a idade como -1)\n");
         printf("Qual o seu sexo?(m ou f)\n");
         fgets(sexo, 2, stdin);
         fflush(stdin);
@@ -58,21 +58,16 @@ int main(void){
             return 1;
         }
 
+        if(strcmp(sexo, fem)==0 && idade >= 18 && idade <= 35 && strcmp(olhos, cas)==0 && strcmp(cabelo, cas)==0){
+            individuoEspecifico++;
+        }
+
+        individuosTotal++;
     }while(idade != -1);
 
-    /* 
-    
-    porcentagem de indivíduos do sexo feminino, com idade entre 18 e 35 anos e que tenham olhos castanhos e cabelos castanhos(se houvesse banco de dados)
+    porcentagem = (float) (individuoEspecifico / individuosTotal) * 100;
 
-    int porcentagem, individuos, populacaoTotal;
-
-    printf("Qual a populacao total dessa região da pesquisa?\n");
-    scanf("%d", &populacaoTotal);
-
-    porcentagem =  (individuos / populacaoTotal) * 100;
-    printf("A  porcentagem de indivíduos do sexo feminino, com idade entre 18 e 35 anos e que tenham olhos castanhos e cabelos castanhos e igual a: %d", porcentagem);
-
-    */
+    printf("A  porcentagem de individuos do sexo feminino, com idade entre 18 e 35 anos e que tenham olhos castanhos e cabelos castanhos e igual a: %.0f%%\n", porcentagem);
     printf("Fim da pesquisa. Agradecemos pelo seu tempo!\n");
 
     return 0;

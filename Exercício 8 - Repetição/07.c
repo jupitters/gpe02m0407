@@ -14,11 +14,11 @@ int main(void){
         fgets(sexo, 2, stdin);
         fflush(stdin);
 
-        printf("Qual a sua altura?\n");
+        printf("Qual a sua altura em metros?(separe por ponto)\n");
         scanf("%f", &altura);
         fflush(stdin);
 
-        printf("Qual o seu peso?\n");
+        printf("Qual o seu peso em kg?(separe por ponto)\n");
         scanf("%f", &peso);
         fflush(stdin);
 

@@ -1,24 +1,29 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void){
     char nome[50], sexo[2], masculino[2] = "m", feminino[2] = "f";
-    int idade, verif = 1, voto, votoSam = 0, votoAlex = 0, votoDzsenifer = 0, votoAmandine = 0, votoMarta = 0, individuosTotal = 0;
+    int idade, verif = 1, voto, votoSam = 0, votoAlex = 0, votoDzsenifer = 0, votoAmandine = 0, votoMarta = 0, numeroFeminino = 0, numeroMasculino = 0, individuosTotal = 0;
 
     printf("Pesquisa de opiniao: Qual das jogadoras listadas voce considera a melhor?\n\n");
     
     do{
         printf("Qual o seu nome?\n");
         fgets(nome, 50, stdin);
+        fflush(stdin);
 
         printf("Qual a sua idade?\n");
         scanf("%d", &idade);
+        fflush(stdin);
 
         printf("Qual o seu sexo?('m' para masculino e 'f' para feminino)\n");
         fgets(sexo, 2, stdin);
+        fflush(stdin);
 
         printf("Qual o seu voto de acordo com a seguinte lista?\n");
         printf("1 - Sam Kerr(Australia)\n2 - Alex Morgan(EUA)\n3 - Dzsenifer Marozsan(Alemanha)\n4 - Amandine Henry(Franca)\n5 - Marta Vieira(Brasil)\n");
         scanf("%d", &voto);
+        fflush(stdin);
 
         switch (voto){
         case 1:
@@ -46,11 +51,18 @@ int main(void){
             return 1;
         }
 
+        if(strcmp(sexo, feminino)==0){
+            numeroFeminino++;
+        }else if(strcmp(sexo, masculino)==0){
+            numeroMasculino++;
+        }
+
         individuosTotal++;
-        if (individuosTotal > 50)
+        if (individuosTotal >= 50)
         {
             printf("Limite minimo para pesquisa atingido! Voce gostaria de continuar?\n(1 para sim, 0 para nao)\n");
-            scanf("%d", verif);
+            scanf("%d", &verif);
+            fflush(stdin);
 
         }else if(individuosTotal == 300){
             printf("Numero maximo de 300 pessoas entrevistadas atingido, agradecemos pelo seu tempo\n");
@@ -58,14 +70,15 @@ int main(void){
         }
         
     }while(verif != 0);
+    
 
     printf("A jogadora Sam Kerr(Australia) recebeu %d votos.\n", votoSam);
     printf("A jogadora Alex Morgan(EUA) recebeu %d votos.\n", votoAlex);
     printf("A jogadora Dzsenifer Marozsan(Alemanha) recebeu %d votos.\n", votoDzsenifer);
     printf("A jogadora Amandine Henry(Franca) recebeu %d votos.\n", votoAmandine);
     printf("A jogadora Marta Vieira(Brasil) recebeu %d votos.\n", votoMarta);
-    
 
+    printf("\nA quantidade de mulheres que participaram da pesquisa foi: %d", numeroFeminino);
 
     return 0;
 }

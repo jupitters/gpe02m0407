@@ -9,6 +9,8 @@ int main(void){
     for(i = 0; i < 50; i++){
         printf("Qual elevador voce utiliza com mais frequencia? (Utilizando letras minusculas entre 'a', 'b' e 'c')\n");
         fgets(elevador, 2, stdin);
+        fflush(stdin);
+
 
         if(strcmp(elevador, elevA)==0){
             elevadorA++;
@@ -23,6 +25,7 @@ int main(void){
 
         printf("E em qual periodo voce mais utiliza? ('m' para matutino, 'v' para vespertino e 'n' para noturno)\n");
         fgets(turno, 2, stdin);
+        fflush(stdin);
 
         if(strcmp(turno, matutitno)==0){
             turnoMat++;

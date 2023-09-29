@@ -7,7 +7,7 @@ int main(void){
 
     printf("- IBGE - Acidentes de Transito nas Cidades Brasileiras\n");
     
-    for(i = 0; i < 5; i++){
+    for(i = 0; i < 200; i++){
         printf("Qual o codigo da sua cidade?\n");
         scanf("%d", &codCidade);
         fflush(stdin);

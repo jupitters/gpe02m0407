@@ -59,6 +59,7 @@ int main(void){
         printf("Voce deve pagar parcelas de R$%.2f", terceira(gasto));
         break;
     default:
+        printf("Opcao Invalida.\n");
         break;
     }
 

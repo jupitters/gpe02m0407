@@ -183,7 +183,7 @@ int excluir(Usuario gen[], int usTotal, int idDigitado){
                     gen[j] = gen[j + 1];
                 }
                 usEx = 1;
-                printf("\nExcluido com sucesso");
+                printf("\nExcluido com sucesso\n");
                 return usEx;
             }
         }
